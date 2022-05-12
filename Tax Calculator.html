@@ -1,0 +1,159 @@
+<!-- Hamdi Tuan | CMSC 126 (B) -->
+<!--Tax Income Calculator-->
+<!--I have training in bookkeeping and accounting since I came from the ABM strand in my Senior Highschool so I made the breakdown in the format of a financial statement.-->
+
+<style>
+td.indent_1 {
+    text-indent: 5%;
+} 
+td.indent_2 {
+    text-indent: 10%;
+}
+td.gross_income {
+    font-weight: bold;
+}
+td.deduction_total {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+td.payable_tax {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+tr.blank_row {
+    height: 10px; 
+    background-color: #FFFFFF;
+}
+
+
+</style>
+
+<html>
+    <head>
+        <title>Income Tax Calculator</title>
+    </head>
+    <body>
+        <h2>Income Tax Calculator</h2>
+        <h4>Hamdi Tuan | CMSC126(B)</h4>
+        <p>This application calculates your income tax payable.</p>
+        <p>Please fill out the necessary information below.</p>
+        <div id="survey">
+            <h5>1. What is your monthly income?</h5>
+            <input type="number" id="no_1" placeholder="Enter positive integer here.">
+            <h5>2. How many are your dependents (e.g. old parents & children below 21 yrs old)?</h5>
+            <input type="number" id="no_2" placeholder="Enter positive integer here.">
+            <div id="no_3_wrapper">
+                <label for="no_3"><h5>3. Are you a government worker?</h5></label>
+                <input type="radio" name="no_3" id="no_3_yes">Yes</input>
+                <input type="radio" name="no_3" id="no_3_no">No</input>
+            </div>
+            <button type="button" id="submit_button">Submit</button>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Amount (₱)</th>
+                    <th>Amount (₱)</th>
+                    <th>Amount (₱)</th>
+                </tr>
+                <tr>
+                     <td><b>GROSS INCOME (ANNUAL)</b></td>
+                </tr>
+                <tr>
+                    <td class="indent_1">Monthly Income</td>
+                    <td></td>
+                    <td id="monthly_income_1"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="indent_1">13th Month Pay</td>
+                    <td></td>
+                    <td id="monthly_income_2"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>TOTAL GROSS INCOME (ANNUAL)</b></td>
+                    <td></td>
+                    <td></td>
+                    <td id="gross_income" class="gross_income"></td>
+                </tr>
+                <tr class="blank_row">
+                </tr>
+                <tr>
+                    <td><b>LESS: DEDUCTION/EXEMPTIONS</b></td>
+                </tr>
+                <tr>
+                    <td id="deduction_1_label_annual" class="indent_1">GSIS/SSS (Annual)</td>
+                    <td></td>
+                    <td id="deduction_1_annual"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="deduction_1_label_monthly" class="indent_2">GSIS/SSS (Monthly)</td>
+                    <td id="deduction_1_monthly"></td>
+                </tr>
+                <tr>
+                    <td id="deduction_2_label_annual" class="indent_1">PhilHealth (Annual)</td>
+                    <td></td>
+                    <td id="deduction_2_annual"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="deduction_2_label_monthly" class="indent_2">PhilHealth/SSS (Monthly)</td>
+                    <td id="deduction_2_monthly"></td>
+                </tr>
+                <tr>
+                    <td id="deduction_3_label_annual" class="indent_1">Pag-IBIG (Annual)</td>
+                    <td></td>
+                    <td id="deduction_3_annual"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="deduction_3_label_monthly" class="indent_2">Pag-IBIG (Monthly)</td>
+                    <td id="deduction_3_monthly"></td>
+                </tr>
+                <tr>
+                    <td class="indent_1">Total Personal Exemption</td>
+                    <td></td>
+                    <td id="deduction_4_total"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="indent_2">Base Personal Exemption</td>
+                    <td id="deduction_4_base"></td>
+                </tr>     
+                <tr>
+                    <td class="indent_2">Additional Personal Exemption</td>
+                    <td id="deduction_4_additional"></td>
+                </tr>               
+                <tr>
+                    <td><b>TOTAL DEDUCTIONS/EXEMPTIONS</b></td>
+                    <td></td>
+                    <td></td>
+                    <td id="deduction_total" class="deduction_total"></td>
+                </tr>  
+                <tr class="blank_row">
+                </tr>
+                <tr>
+                    <td><b>NET TAXABLE INCOME</b></td>
+                    <td></td>
+                    <td></td>
+                    <td id="net_taxable_income"></td>
+                </tr>
+                <tr class="blank_row">
+                </tr>
+                <tr>
+                    <td><b>PAYABLE TAX</b></td>
+                    <td></td>
+                    <td></td>
+                    <td id="payable_tax"class="payable_tax"></td>
+                </tr>
+            </table>
+        </div>
+        <script src="Tax Calculator.js"></script>
+    </body>
+</html>
